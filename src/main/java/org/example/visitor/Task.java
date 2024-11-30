@@ -28,4 +28,9 @@ public abstract class Task<T> {
     public String getHeader(String header) {
         return headers.get(header);
     }
+
+    public void accept(Visitor visitor) {
+        visitor.visitTask(this);
+    }
+
 }

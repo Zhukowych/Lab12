@@ -30,8 +30,11 @@ public class Group<T> extends Task<T> {
     public void apply(T arg) {
         this.freeze();
         tasks = Collections.unmodifiableList(tasks);
+        StampingVisitor visitor = new StampingVisitor(groupUuid);
         for (Task<T> task: tasks) {
+            task.accept(visitor);
             task.apply(arg);
         }
     }
+
 }
