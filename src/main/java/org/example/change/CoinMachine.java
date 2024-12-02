@@ -14,13 +14,14 @@ public abstract class CoinMachine {
         int coinsQuantity = amount / denomination;
         int residual = amount % denomination;
 
-        if (coinsQuantity != 0)
-            System.out.format("Received %d coins of %d denomination", coinsQuantity, denomination);
-
         if (this.hasNext())
             nextCoinMachine.receiveCoins(residual);
         else if (residual > 0)
             throw new IllegalArgumentException("Cannot give this amount with existing denominations");
+
+        if (coinsQuantity != 0)
+            System.out.format("Received %d coins of %d denomination\n", coinsQuantity, denomination);
+
     }
 
     public boolean hasNext() {

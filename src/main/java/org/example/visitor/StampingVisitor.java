@@ -1,6 +1,6 @@
 package org.example.visitor;
 
-public class StampingVisitor implements Visitor{
+public class StampingVisitor implements Visitor {
 
     private String groupUUID;
 

@@ -5,7 +5,7 @@ public class ATM {
     private final CoinMachine coinMachine;
 
     public ATM() {
-        this.coinMachine = new Coin500(new Coin200(new Coin100(new Coin10(null))));
+        this.coinMachine = new Coin500(new Coin200(new Coin100(new Coin10(new Coin5(null)))));
     }
 
     public void receiveMoney(int money) {
